@@ -1,0 +1,14 @@
+C:\rogue\cursos\curso_api_netcore\src\Api.Service\bin\Debug\netcoreapp3.1\Service.deps.json
+C:\rogue\cursos\curso_api_netcore\src\Api.Service\bin\Debug\netcoreapp3.1\Service.dll
+C:\rogue\cursos\curso_api_netcore\src\Api.Service\bin\Debug\netcoreapp3.1\Service.pdb
+C:\rogue\cursos\curso_api_netcore\src\Api.Service\obj\Debug\netcoreapp3.1\Service.csprojAssemblyReference.cache
+C:\rogue\cursos\curso_api_netcore\src\Api.Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfoInputs.cache
+C:\rogue\cursos\curso_api_netcore\src\Api.Service\obj\Debug\netcoreapp3.1\Service.AssemblyInfo.cs
+C:\rogue\cursos\curso_api_netcore\src\Api.Service\obj\Debug\netcoreapp3.1\Service.csproj.CoreCompileInputs.cache
+C:\rogue\cursos\curso_api_netcore\src\Api.Service\obj\Debug\netcoreapp3.1\Service.dll
+C:\rogue\cursos\curso_api_netcore\src\Api.Service\obj\Debug\netcoreapp3.1\Service.pdb
+C:\rogue\cursos\curso_api_netcore\src\Api.Service\bin\Debug\netcoreapp3.1\Data.dll
+C:\rogue\cursos\curso_api_netcore\src\Api.Service\bin\Debug\netcoreapp3.1\Domain.dll
+C:\rogue\cursos\curso_api_netcore\src\Api.Service\bin\Debug\netcoreapp3.1\Domain.pdb
+C:\rogue\cursos\curso_api_netcore\src\Api.Service\bin\Debug\netcoreapp3.1\Data.pdb
+C:\rogue\cursos\curso_api_netcore\src\Api.Service\obj\Debug\netcoreapp3.1\Service.csproj.CopyComplete
