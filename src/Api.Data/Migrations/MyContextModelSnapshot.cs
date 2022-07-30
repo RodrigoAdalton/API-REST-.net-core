@@ -44,6 +44,16 @@ namespace Data.Migrations
                         .IsUnique();
 
                     b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("3a15869e-02d4-458c-91a5-af57c84311b1"),
+                            CreatedAt = new DateTime(2022, 7, 30, 15, 42, 1, 880, DateTimeKind.Local).AddTicks(2268),
+                            Email = "mfrinfo@mail.com",
+                            Name = "Administrador",
+                            UpdatedAt = new DateTime(2022, 7, 30, 15, 42, 1, 880, DateTimeKind.Local).AddTicks(8768)
+                        });
                 });
 #pragma warning restore 612, 618
         }

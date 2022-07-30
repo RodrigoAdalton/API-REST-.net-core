@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20220719234912_UserMigration")]
+    [Migration("20220730184202_UserMigration")]
     partial class UserMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,17 +29,33 @@ namespace Data.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Email")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
+                        .HasMaxLength(100);
 
                     b.Property<string>("Name")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
+                        .IsRequired()
+                        .HasColumnType("varchar(60) CHARACTER SET utf8mb4")
+                        .HasMaxLength(60);
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.HasIndex("Email")
+                        .IsUnique();
+
+                    b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("3a15869e-02d4-458c-91a5-af57c84311b1"),
+                            CreatedAt = new DateTime(2022, 7, 30, 15, 42, 1, 880, DateTimeKind.Local).AddTicks(2268),
+                            Email = "mfrinfo@mail.com",
+                            Name = "Administrador",
+                            UpdatedAt = new DateTime(2022, 7, 30, 15, 42, 1, 880, DateTimeKind.Local).AddTicks(8768)
+                        });
                 });
 #pragma warning restore 612, 618
         }
