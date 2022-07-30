@@ -1,8 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using Api.Domain.Dtos.User;
 using Api.Domain.Entities;
 using Api.Domain.Interfaces.Services.User;
 using Microsoft.AspNetCore.Authorization;
@@ -10,11 +9,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Application.Controllers
 {
+    //http://localhost:5000/api/users
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private IUserService _service;
+        public IUserService _service { get; set; }
         public UsersController(IUserService service)
         {
             _service = service;
@@ -26,9 +26,8 @@ namespace Api.Application.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return BadRequest(ModelState);  // 400 Bad Request - Solicitação Inválida
             }
-
             try
             {
                 return Ok(await _service.GetAll());
@@ -48,7 +47,6 @@ namespace Api.Application.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             try
             {
                 return Ok(await _service.Get(id));
@@ -61,20 +59,18 @@ namespace Api.Application.Controllers
 
         [Authorize("Bearer")]
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] UserEntity user)
+        public async Task<ActionResult> Post([FromBody] UserDtoCreate user)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
             try
             {
                 var result = await _service.Post(user);
-
                 if (result != null)
                 {
-                    return Created(new Uri(Url.Link("GetWithId", new { id = result })), result);
+                    return Created(new Uri(Url.Link("GetWithId", new { id = result.Id })), result);
                 }
                 else
                 {
@@ -89,17 +85,15 @@ namespace Api.Application.Controllers
 
         [Authorize("Bearer")]
         [HttpPut]
-        public async Task<ActionResult> Put([FromBody] UserEntity user)
+        public async Task<ActionResult> Put([FromBody] UserDtoUpdate user)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
             try
             {
                 var result = await _service.Put(user);
-
                 if (result != null)
                 {
                     return Ok(result);
@@ -123,10 +117,8 @@ namespace Api.Application.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             try
             {
-
                 return Ok(await _service.Delete(id));
             }
             catch (ArgumentException e)
