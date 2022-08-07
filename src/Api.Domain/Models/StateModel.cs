@@ -2,20 +2,20 @@ using System;
 
 namespace Api.Domain.Models
 {
-    public class UserModel : BaseModel
+    public class StateModel : BaseModel
     {
+        private string _initial;
+        public string Initial
+        {
+            get { return _initial; }
+            set { _initial = value; }
+        }
+
         private string _name;
         public string Name
         {
             get { return _name; }
             set { _name = value; }
-        }
-
-        private string _email;
-        public string Email
-        {
-            get { return _email; }
-            set { _email = value; }
         }
     }
 }
