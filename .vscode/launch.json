@@ -21,7 +21,7 @@
             },
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development",
-                "DB_CONNECTION": "Server=localhost;Port=3306;Database=dbAPI2;Uid=root;Pwd=rogue",
+                "DB_CONNECTION": "Server=localhost;Port=3306;Database=dbAPI;Uid=root;Pwd=rogue",
                 "DATABASE": "MYSQL",
                 "MIGRATION": "APLICAR",
                 "Audience": "ExemploAudience",
