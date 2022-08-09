@@ -1,5 +1,5 @@
 using System;
-using Api.Domain.Entities;
+using Api.Domain.Dtos.City;
 
 namespace Api.Domain.Dtos.Cep
 {
@@ -10,6 +10,6 @@ namespace Api.Domain.Dtos.Cep
         public string Address { get; set; }
         public string Number { get; set; }
         public Guid CityId { get; set; }
-        public CityEntity City { get; set; }
+        public CityDtoComplete City { get; set; }
     }
 }
