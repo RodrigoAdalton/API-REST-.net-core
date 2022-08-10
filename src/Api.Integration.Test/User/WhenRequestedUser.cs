@@ -19,9 +19,7 @@ namespace Api.Integration.Test.User
         [Fact]
         public async Task E_Possivel_Realizar_Crud_Usuario()
         {
-
             await AdicionarToken();
-
             _name = Faker.Name.First();
             _email = Faker.Internet.Email();
 
