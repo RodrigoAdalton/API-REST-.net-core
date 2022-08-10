@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Api.Data.Mapping;
+using Api.Data.Seeds;
 using Api.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,6 +20,10 @@ namespace Api.Data.Context
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<UserEntity>(new UserMap().Configure);
 
+            modelBuilder.Entity<StateEntity>(new StateMap().Configure);
+            modelBuilder.Entity<CityEntity>(new CityMap().Configure);
+            modelBuilder.Entity<CepEntity>(new CepMap().Configure);
+
             modelBuilder.Entity<UserEntity>().HasData(
                 new UserEntity
                 {
@@ -29,6 +34,8 @@ namespace Api.Data.Context
                     UpdatedAt = DateTime.Now,
                 }
             );
+
+            StateSeeds.States(modelBuilder);
         }
     }
 }
